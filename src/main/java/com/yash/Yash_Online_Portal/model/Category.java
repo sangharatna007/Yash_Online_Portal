@@ -1,37 +1,40 @@
 package com.yash.Yash_Online_Portal.model;
 
-public class Category {
+import java.io.Serializable;
 
-    private int Id;
+import javax.validation.constraints.NotNull;
 
-    private String title;
+public class Category implements Serializable {
 
-    public Category(int id, String title) {
-        Id = id;
-        this.title = title;
-    }
+	private static final long serialVersionUID = -1864198348558983648L;
 
-    public int getId() {
-        return Id;
-    }
+	@NotNull
+	private int categoryId;
 
-    public void setId(int id) {
-        Id = id;
-    }
+	@NotNull
+	private String categoryTitle;
+	
+	public Category(){}
 
-    public String getTitle() {
-        return title;
-    }
+	public Category(int id, String title) {
+		this.categoryId = id;
+		this.categoryTitle = title;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public int getCategoryId() {
+		return categoryId;
+	}
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "Id=" + Id +
-                ", title='" + title + '\'' +
-                '}';
-    }
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getCategoryTitle() {
+		return categoryTitle;
+	}
+
+	public void setCategoryTitle(String categoryTitle) {
+		this.categoryTitle = categoryTitle;
+	}
+
 }
